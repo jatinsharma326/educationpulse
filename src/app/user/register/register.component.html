@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="regist">
+    <mat-card>
+        <span style="color: black;margin-left:160px;font-style: bold;">REGISTER</span>
+        <form #registerForm="ngForm">
+    <div class="example-container">
+        <mat-form-field>
+            <input [(ngModel)] = "formData.name" name = "name" matInput placeholder="Name" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)] = "formData.email" name = "email" placeholder="email" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)] = "formData.password" name = "password" placeholder="Password" type="password" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)] = "formData.number" name = "number"placeholder="Phone Number" type="number" required>
+        </mat-form-field>
+
+    </div>
+
+    <button   [disabled] = "!registerForm.form.valid"
+    mat-raised-button color="accent" (click)="register()">Register</button>
+</form>
+</mat-card>
+</div>
